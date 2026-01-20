@@ -94,15 +94,14 @@ function DashboardOverview() {
   return (
     <div className="space-y-8 animate-in fade-in duration-500 max-w-300 mx-auto">
       {/* Header */}
-      <header className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/30 pb-6">
-        <div>
+      <header className="flex justify-between items-end gap-4 border-b border-border/30 pb-6">
+        <div className="space-y-1">
           <h1 className="text-3xl font-serif font-medium tracking-tight text-foreground">
             仪表盘
           </h1>
-          <div className="flex items-center gap-2 mt-2">
-            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-            <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-              系统运行正常
+          <div className="flex items-center gap-2">
+            <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+              SYSTEM_OPERATIONAL
             </p>
           </div>
         </div>

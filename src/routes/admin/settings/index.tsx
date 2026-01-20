@@ -79,20 +79,22 @@ function RouteComponent() {
         className="space-y-8 pb-20 animate-in fade-in slide-in-from-bottom-4 duration-1000"
       >
         {/* Header Area */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/30">
-          <div className="space-y-2">
+        <div className="flex justify-between items-end pb-6 border-b border-border/30">
+          <div className="space-y-1">
             <h1 className="text-3xl font-serif font-medium tracking-tight text-foreground">
               系统设置
             </h1>
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              系统配置
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                SYSTEM_CONFIGURATION
+              </p>
+            </div>
           </div>
 
           <Button
             type="submit"
             disabled={isSubmitting || !isDirty}
-            className="h-9 px-6 rounded-none bg-foreground text-background hover:bg-foreground/90 transition-all font-mono text-[10px] uppercase tracking-widest disabled:opacity-50"
+            className="h-10 px-6 rounded-none bg-foreground text-background hover:bg-foreground/90 transition-all font-mono text-[11px] uppercase tracking-[0.2em] font-medium disabled:opacity-50"
           >
             {isSubmitting ? (
               <Loader2 size={12} className="animate-spin mr-2" />

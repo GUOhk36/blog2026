@@ -1,13 +1,4 @@
-import {
-  Eye,
-  EyeOff,
-  Globe,
-  Info,
-  Loader2,
-  Lock,
-  Mail,
-  Wifi,
-} from "lucide-react";
+import { Eye, EyeOff, Globe, Info, Lock, Wifi } from "lucide-react";
 import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import type { SystemConfig } from "@/features/config/config.schema";
@@ -186,45 +177,60 @@ export function EmailServiceSection({
         </section>
 
         {/* Property Row: Test Connection */}
-        <div className="pt-8 border-t border-border/30">
-          <div className="border border-border/30 p-4 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-8 bg-muted/10 flex items-center justify-center border border-border/30">
-                <Mail size={14} className="text-muted-foreground" />
+        <section className="space-y-6 pt-6 border-t border-border/30">
+          <header className="flex items-center gap-3">
+            <Wifi size={12} className="text-muted-foreground" />
+            <h5 className="text-[9px] font-mono uppercase tracking-widest text-muted-foreground">
+              服务连通性
+            </h5>
+          </header>
+
+          <div className="pl-6 flex items-center justify-between group">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <div
+                  className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${
+                    status === "SUCCESS"
+                      ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+                      : status === "ERROR"
+                        ? "bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"
+                        : status === "TESTING"
+                          ? "bg-amber-500 animate-pulse"
+                          : "bg-muted-foreground/30"
+                  }`}
+                />
+                <span className="text-xs font-serif text-foreground">
+                  {status === "SUCCESS"
+                    ? "连接正常"
+                    : status === "ERROR"
+                      ? "连接失败"
+                      : "等待测试"}
+                </span>
               </div>
-              <div className="space-y-0.5">
-                <h6 className="text-xs font-serif font-medium text-foreground">
-                  连通性测试
-                </h6>
-                <p className="text-[9px] font-mono text-muted-foreground uppercase tracking-widest">
-                  连通性测试
-                </p>
-              </div>
+              <p className="text-[10px] font-mono text-muted-foreground/50 pl-3.5">
+                {status === "SUCCESS"
+                  ? "连接建立成功"
+                  : status === "ERROR"
+                    ? "连接被拒绝"
+                    : "等待执行测试"}
+              </p>
             </div>
+
             <Button
               type="button"
-              variant={status === "TESTING" ? "default" : "outline"}
+              variant="ghost"
               onClick={handleTest}
               disabled={status === "TESTING" || !isConfigured}
-              className={`flex items-center gap-2 px-4 h-8 rounded-none text-[10px] font-mono uppercase tracking-widest transition-all ${
+              className={`h-8 px-4 rounded-none text-[10px] font-mono uppercase tracking-widest transition-all border border-transparent hover:border-border/30 ${
                 !isConfigured
-                  ? "bg-transparent text-muted-foreground/40 cursor-not-allowed border-border/30"
-                  : status === "TESTING"
-                    ? "opacity-80"
-                    : status === "SUCCESS"
-                      ? "border-emerald-500/30 text-emerald-500 bg-emerald-500/5"
-                      : "text-foreground bg-transparent hover:bg-muted/10 border-border/30"
+                  ? "text-muted-foreground/30 cursor-not-allowed"
+                  : "text-foreground hover:bg-muted/50"
               }`}
             >
-              {status === "TESTING" ? (
-                <Loader2 size={10} className="animate-spin" />
-              ) : (
-                <Wifi size={10} />
-              )}
-              {status === "SUCCESS" ? "[ 验证成功 ]" : "[ 发送测试 ]"}
+              {status === "TESTING" ? "[ 验证中 ]" : "[ 发送测试 ]"}
             </Button>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

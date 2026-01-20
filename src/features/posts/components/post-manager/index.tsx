@@ -126,13 +126,15 @@ export function PostManager({
     <div className="space-y-8 pb-20">
       {/* Header */}
       <div className="flex justify-between items-end animate-in fade-in slide-in-from-bottom-4 duration-1000 fill-mode-both border-b border-border/30 pb-6">
-        <div className="space-y-2">
+        <div className="space-y-1">
           <h1 className="text-3xl font-serif font-medium tracking-tight">
             文章管理
           </h1>
-          <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-            POSTS_MANAGEMENT_SYSTEM
-          </p>
+          <div className="flex items-center gap-2">
+            <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+              POSTS_MANAGEMENT_SYSTEM
+            </p>
+          </div>
         </div>
         <Button
           onClick={() => createMutation.mutate()}

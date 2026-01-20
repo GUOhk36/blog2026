@@ -89,13 +89,15 @@ function MediaLibrary() {
       {/* Header Section */}
       <div className="space-y-8 pb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/30">
-          <div className="space-y-2">
+          <div className="space-y-1">
             <h1 className="text-3xl font-serif font-medium tracking-tight">
               媒体库
             </h1>
-            <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-              DIGITAL_ASSET_ARCHIVE
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+                DIGITAL_ASSET_ARCHIVE
+              </p>
+            </div>
           </div>
           <Button
             onClick={() => setIsUploadOpen(true)}

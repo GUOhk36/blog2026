@@ -79,13 +79,15 @@ function CommentAdminPage() {
     <div className="space-y-8 pb-20 animate-in fade-in slide-in-from-bottom-4 duration-1000">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-b border-border/30 pb-6">
-        <div className="space-y-2">
+        <div className="space-y-1">
           <h1 className="text-3xl font-serif font-medium tracking-tight text-foreground">
             评论管理
           </h1>
-          <p className="text-xs font-mono tracking-widest text-muted-foreground uppercase">
-            COMMUNITY_MODERATION
-          </p>
+          <div className="flex items-center gap-2">
+            <p className="text-xs font-mono tracking-widest text-muted-foreground uppercase">
+              COMMUNITY_MODERATION
+            </p>
+          </div>
         </div>
 
         {/* User Search */}

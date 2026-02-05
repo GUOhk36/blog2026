@@ -73,7 +73,7 @@ export const CommentItem = memo(
               <img
                 src={comment.user.image}
                 alt={comment.user.name}
-                className="w-full h-full object-cover grayscale opacity-80"
+                className="w-full h-full object-cover"
               />
             ) : (
               <span className="text-[10px] font-mono text-muted-foreground uppercase">

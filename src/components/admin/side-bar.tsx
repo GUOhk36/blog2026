@@ -151,7 +151,7 @@ export function SideBar({
               {({ isActive }) => (
                 <div
                   className={cn(
-                    "flex items-center gap-4 px-4 py-3 text-[11px] font-mono transition-all border border-transparent",
+                    "flex items-center gap-4 px-4 py-3 text-[14px] font-mono transition-all border border-transparent",
                     isActive
                       ? "bg-foreground text-background border-foreground"
                       : "text-muted-foreground hover:text-foreground hover:border-border/30",

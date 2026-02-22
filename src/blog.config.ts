@@ -12,6 +12,12 @@ export const blogConfig = {
     github: env.VITE_BLOG_GITHUB || "https://github.com/example",
     email: env.VITE_BLOG_EMAIL || "abertaglar@proton.com",
   },
+  theme: {
+    fuwari: {
+      homeBg: env.VITE_FUWARI_HOME_BG || "/images/home-bg.jpg",
+      avatar: env.VITE_FUWARI_AVATAR || "/images/avatar.png",
+    },
+  },
 };
 
 export type BlogConfig = typeof blogConfig;

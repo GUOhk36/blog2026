@@ -1,6 +1,13 @@
 {
-  "name": "blog",
+  "name": "flare-stack-blog",
+  "version": "0.7.1",
   "type": "module",
+  "author": {
+    "email": "kuangdadu@gmail.com",
+    "name": "akuang",
+    "url": "https://github.com/du2333"
+  },
+  "license": "GPL-3.0-only",
   "private": true,
   "scripts": {
     "dev": "vite dev --port 3000",
@@ -17,13 +24,16 @@
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "wrangler d1 migrations apply DB --remote",
-    "auth:generate-schema": "bunx @better-auth/cli generate --config auth-cli.ts --output src/lib/db/schema/auth.schema.ts"
+    "auth:generate-schema": "bunx @better-auth/cli generate --config auth-cli.ts --output src/lib/db/schema/auth.schema.ts",
+    "create-theme": "bun scripts/create-theme.ts",
+    "release": "export GITHUB_TOKEN=$(gh auth token) && release-it"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.7.6",
     "@hookform/resolvers": "^5.2.2",
     "@noble/hashes": "^2.0.1",
     "@orama/orama": "^3.1.16",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.0.6",
     "@tanstack/react-devtools": "^0.7.0",
     "@tanstack/react-query": "^5.66.5",
@@ -79,6 +89,7 @@
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@fontsource-variable/noto-sans-sc": "^5.2.9",
     "@fontsource-variable/noto-serif-sc": "^5.2.10",
+    "@release-it/conventional-changelog": "^10.0.5",
     "@tanstack/devtools-vite": "^0.3.9",
     "@tanstack/eslint-config": "^0.3.4",
     "@testing-library/dom": "^10.4.0",
@@ -91,6 +102,7 @@
     "eslint": "9.39.2",
     "jsdom": "^27.0.0",
     "prettier": "3.7.4",
+    "release-it": "^19.2.4",
     "shiki": "^3.15.0",
     "typescript": "^5.7.2",
     "vite": "^7.1.7",
